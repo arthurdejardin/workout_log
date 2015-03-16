@@ -1,9 +1,16 @@
-%h1 Show page for workout
+#workout
+	%p= @workout.workout
+	%p= @workout.date
+	%p= @workout.mood
+	%p= @workout.length
 
-%p= @workout.workout
-%p= @workout.date
-%p= @workout.mood
-%p= @workout.length
+#exercices
+	%h2 Exercices
+	= render @workout.exercices
+
+	%h3 Add an exercices
+	=render 'exercices/form'
+
 
 = link_to "Back |", root_path
 = link_to "Edit", edit_workout_path(@workout)

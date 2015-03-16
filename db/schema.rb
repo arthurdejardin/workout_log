@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150314181952) do
+ActiveRecord::Schema.define(version: 20150316150122) do
+
+  create_table "exercices", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "sets"
+    t.integer  "reps"
+    t.integer  "workout_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "exercices", ["workout_id"], name: "index_exercices_on_workout_id"
 
   create_table "workouts", force: :cascade do |t|
     t.datetime "date"
